@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #0056b3;
+}
+
+.history, .bet-section, .wheel-history {
+    margin-top: 30px;
+}
+
+.snow {
+    position: fixed;
+    top: 10;
+    left: 20;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/snow.png') repeat top center;
+    animation: snow 20s linear infinite;
+}
+
+@keyframes snow {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 0px 1000px; }
+}
+/* Hiệu ứng tuyết rơi */
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 12px;
+    pointer-events: none;
+    animation: fall linear infinite, drift infinite ease-in-out;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0.5;
+    }
+}
+
+@keyframes drift {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
