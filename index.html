@@ -432,9 +432,9 @@
                 delete validDepositCodes[code];
 
                 // Hiển thị thông báo
-                alert(`Nạp thành công ${amount} điểm!`);
+                alert(`🎉 Chúc mừng bạn đã nạp thành công ${amount} điểm!🎉`);
             } else {
-                alert("Mã giao dịch không hợp lệ hoặc đã được sử dụng!");
+                alert("😭 Mã giao dịch không hợp lệ hoặc đã được sử dụng!😭");
             }
         }
 
@@ -508,7 +508,7 @@
 
             // Hiển thị kết quả
             document.getElementById("spin-result").textContent = `Kết quả: ${spinResult}`;
-            alert(isWin ? `🎉 Xin chúc mừng bạn đã thắng! Nhận được ${winnings} điểm 🎉.` : `Bạn đã thua! Mất ${betAmount} điểm.😔`);
+            alert(isWin ? `🎉 Xin chúc mừng bạn đã thắng! Nhận được ${winnings} điểm 🎉.` : `😭Bạn đã thua! Mất ${betAmount} điểm.😔`);
         }
 
         // Chọn loại cược
@@ -643,7 +643,7 @@
     <!-- Nội dung trang web -->
 
     <div class="footer">
-        &copy; This web make by BB Boy. Don't copy
+        &copy; This web make by BB Boy. Don't copy ✅
     </div>
 
     <script>
