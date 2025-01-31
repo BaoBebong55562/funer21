@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHẲN LẺ VUI VẺ</title>
+    <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
 <body class="bg-gray-100 text-gray-800">
@@ -54,26 +54,106 @@
         </style>
     </head>
     <body>
-        <!-- Thông báo khi truy cập vào trang web -->
-        <div id="notification" class="notification">
-            <button class="close-btn" onclick="closeNotification()">×</button>
-            <div class="notification-content">
-                <p><strong>Trò chơi này chỉ mang tính chất giải trí và không khuyến khích cá cược hay đánh bạc dưới bất kỳ hình thức nào.</strong></p>
-                <p>1. Hãy tham gia với tinh thần vui vẻ, thư giãn và không đặt nặng vấn đề thắng thua.</p>
-                <p>2. Chúng tôi cam kết mang đến những trải nghiệm thú vị nhưng luôn tôn trọng nguyên tắc chơi lành mạnh.</p>
-                <p>3. Mọi hoạt động trong trò chơi đều nhằm mục đích giải trí, không khuyến khích việc sử dụng nó để kiếm lời.</p>
-                <p>4. Hãy chơi có trách nhiệm và luôn nhớ rằng giải trí là mục tiêu chính của trò chơi này.</p>
+        <!DOCTYPE html>
+        <html lang="vi">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Thông báo với hiệu ứng</title>
+            <style>
+                /* Style cho thông báo */
+                .notification {
+                    background-color: rgba(248, 215, 218, 0.9); /* Nền thông báo với độ mờ */
+                    color: #721c24;
+                    padding: 20px;
+                    border: 1px solid #f5c6cb;
+                    border-radius: 5px;
+                    position: fixed;
+                    top: 20%;
+                    left: 50%;
+                    width: 80%;
+                    max-width: 600px;
+                    height: auto;
+                    z-index: 999;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    opacity: 0;
+                    transform: translateX(-50%) translateY(-100px);
+                    transition: all 1s ease-in-out;
+                }
+        
+                /* Style cho nút đóng */
+                .close-btn {
+                    background: transparent;
+                    border: none;
+                    font-size: 30px;
+                    color: #721c24;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                }
+        
+                /* Style cho nội dung thông báo */
+                .notification-content {
+                    text-align: left;
+                    font-size: 18px;
+                    width: 100%;
+                }
+        
+                /* Style cho chữ 7 màu */
+                .rainbow-text {
+                    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+                    background-size: 200% 100%;
+                    background-clip: text;
+                    color: transparent;
+                    font-size: 24px; /* Lớn hơn cho tiêu đề */
+                    font-weight: bold;
+                    display: inline-block;
+                    animation: rainbow 3s linear infinite; /* Hiệu ứng màu sắc chuyển động liên tục */
+                }
+        
+                /* Hiệu ứng chuyển màu cho chữ */
+                @keyframes rainbow {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    100% {
+                        background-position: 100% 50%;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div id="notification" class="notification">
+                <button class="close-btn" onclick="closeNotification()">×</button>
+                <div class="notification-content">
+                    <p><strong class="rainbow-text">Trò chơi này chỉ mang tính chất giải trí và không khuyến khích cá cược hay đánh bạc dưới bất kỳ hình thức nào.</strong></p>
+                    <p>1. Hãy tham gia với tinh thần vui vẻ, thư giãn và không đặt nặng vấn đề thắng thua.</p>
+                    <p>2. Chúng tôi cam kết mang đến những trải nghiệm thú vị nhưng luôn tôn trọng nguyên tắc chơi lành mạnh.</p>
+                    <p>3. Mọi hoạt động trong trò chơi đều nhằm mục đích giải trí, không khuyến khích việc sử dụng nó để kiếm lời.</p>
+                    <p>4. Hãy chơi có trách nhiệm và luôn nhớ rằng giải trí là mục tiêu chính của trò chơi này.</p>
+                </div>
             </div>
-        </div>
-    
-        <script>
-            // Hàm để tắt thông báo khi nhấn dấu "X"
-            function closeNotification() {
-                document.getElementById('notification').style.display = 'none';
-            }
-        </script>
-    
-    </body>
+        
+            <script>
+                // Hàm để tắt thông báo khi nhấn dấu "X"
+                function closeNotification() {
+                    document.getElementById('notification').style.display = 'none';
+                }
+        
+                // Hiển thị thông báo sau khi trang web được tải
+                window.onload = function() {
+                    var notification = document.getElementById('notification');
+                    notification.style.opacity = 1;
+                    notification.style.transform = 'translateX(-50%) translateY(0)';
+                }
+            </script>
+        </body>
+        </html>
+        
     <div class="container mx-auto p-4">
         <h1 class="text-2xl font-bold text-center mb-4">CHÀO MỪNG BẠN ĐẾN VỚI TRÒ CHƠI CHẲN LẺ</h1>
 
@@ -90,8 +170,44 @@
             <p>TÊT ÂM LỊCH 2025: Chúc các bạn năm mới vui vẻ nhiều sức khỏe và thật nhiều may mắn </p>
         </div>
   <!-- Hướng dẫn nạp tiền -->
-  <h2 class="text-xl font-bold text-center mb-4">CÁC MỆNH GIÁ NHẬN TIỀN</h2>
-  <table border="1" cellpadding="10" cellspacing="0" class="mx-auto mb-6 w-1/2 rounded-lg text-center bg-gray-200">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiệu ứng chữ 7 màu</title>
+    <style>
+        /* Hiệu ứng chữ màu sắc cầu vồng chạy nhanh */
+        .rainbow-text {
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 200% 100%;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            display: inline-block;
+            animation: rainbow 1s linear infinite; /* Hiệu ứng chuyển động nhanh */
+        }
+
+        /* Hiệu ứng chuyển màu cho chữ */
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Căn giữa chữ */
+        .center-text {
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hướng dẫn nạp tiền -->
+    <h2 class="rainbow-text center-text text-xl font-bold mb-4">CÁC MỆNH GIÁ NHẬN TIỀN</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" class="mx-auto mb-6 w-1/2 rounded-lg text-center bg-gray-200">
       <thead>
           <tr>
               <th class="text-red-600">Số thứ tự</th>
@@ -117,12 +233,39 @@
           </tr>
       </tbody>
   </table>
-        <div class="mb-6">
-            <h3 class="text-lg font-semibold mb-2">Tạo ID Người Chơi</h3>
-            <input type="text" id="player-id" placeholder="Nhập ID người chơi (10 chữ số)" class="border p-2 w-full mb-2" maxlength="10" oninput="validatePlayerId()">
-            <button class="bg-blue-600 text-white px-4 py-2 rounded" onclick="createPlayerId()">Tạo ID</button>
-            <div id="player-id-message" class="mt-2"></div>
-        </div>
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold mb-2 bounce-effect">Tạo ID Người Chơi</h3>
+    <input type="text" id="player-id" placeholder="Nhập ID người chơi (10 chữ số)" class="border p-2 w-full mb-2" maxlength="10" oninput="validatePlayerId()">
+    <button class="bg-blue-600 text-white px-4 py-2 rounded" onclick="createPlayerId()">Tạo ID</button>
+    <div id="player-id-message" class="mt-2"></div>
+</div>
+
+<style>
+    /* Hiệu ứng nhảy lên xuống cho tiêu đề */
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        25% {
+            transform: translateY(-10px);
+        }
+        50% {
+            transform: translateY(0);
+        }
+        75% {
+            transform: translateY(5px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* Áp dụng hiệu ứng bounce cho tiêu đề */
+    .bounce-effect {
+        animation: bounce 1s ease infinite;
+    }
+</style>
+
 
         <div id="wallet-info" class="hidden mb-6">
             <h3 class="text-lg font-semibold mb-2">Số dư ví: <span id="wallet-balance">0</span> VNĐ</h3>
@@ -210,6 +353,7 @@
             "XYZ456": 50000,
             "LMN789": 30000,
             "BAOVIP": 100000,
+            "BAB123": 50000,
         };
 
         // Dữ liệu người chơi
@@ -229,7 +373,7 @@
                 currentBalance = playerData[playerId];
                 balanceElement.textContent = currentBalance;
                 walletBalanceElement.textContent = "0"; // Hiển thị số dư ví là 0 VNĐ
-                document.getElementById("player-id-message").textContent = "Đã tạo ID thành công, chúc bạn chơi vui vẻ!";
+                document.getElementById("player-id-message").textContent = "Đã tạo ID thành công, chúc bạn chơi vui vẻ!😊";
                 document.getElementById("wallet-info").classList.remove("hidden");
                 enableGameFeatures();
             } else {
