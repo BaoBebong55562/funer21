@@ -1,0 +1,209 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .menu-item {
+            transition: color 0.3s, background-color 0.3s, transform 0.2s;
+        }
+        .menu-item:hover {
+            color: #fff;
+            background-color: #ff6347; /* Tomato color */
+        }
+        .menu-item:active {
+            transform: scale(0.95);
+        }
+        .menu-item.active {
+            color: #fff;
+            background-color: #ff4500; /* OrangeRed color */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <header>
+        <nav class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4 shadow-md">
+            <div class="container mx-auto flex flex-wrap justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-white">Trang Chủ</a>
+                <ul class="flex flex-col md:flex-row justify-center w-full md:w-auto space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+                    <li class="w-full md:w-auto"><a href="vqmm.html" class="menu-item block text-center px-3 py-2 rounded-md text-white bg-green-500 hover:text-white hover:bg-red-500">Vòng quay may mắn</a></li>
+                    <li class="w-full md:w-auto"><a href="cs&dk.html" class="menu-item block text-center px-3 py-2 rounded-md text-white bg-green-500 hover:text-white hover:bg-red-500">Chính sách và điều khoản</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Quay Số Ngẫu Nhiên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .btn {
+            background-color: #38a169;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2f855a;
+        }
+
+        .input-container input {
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .wheel-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .alert {
+            background-color: #e53e3e;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        .history-table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .history-table th, .history-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .history-table th {
+            background-color: #f9f9f9;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="container mx-auto p-6 bg-white shadow-lg rounded-lg text-center">
+    <h1 class="text-3xl font-bold mb-4">Quay Số Ngẫu Nhiên</h1>
+
+    <div class="input-container mb-4">
+        <input type="text" id="userId" placeholder="Nhập ID của bạn (10 chữ số)" class="p-2 border border-gray-300 rounded mb-2 w-full"/>
+        <input type="text" id="userCode" placeholder="Nhập mã của bạn (3 chữ và 3 số)" class="p-2 border border-gray-300 rounded mb-2 w-full"/>
+        <button id="startButton" class="btn w-full">Bắt đầu quay</button>
+    </div>
+
+    <div id="spinInfo" class="hidden">
+        <h2 class="text-xl font-bold mb-4">Số lượt quay còn lại: <span id="remainingSpins">2</span></h2> <!-- Hiển thị số lượt quay còn lại -->
+    </div>
+
+    <div class="wheel-container">
+        <h2 class="text-xl font-bold mb-4">Kết Quả Quay</h2>
+        <div id="randomResult" class="text-3xl font-semibold text-blue-600">Chưa quay</div>
+    </div>
+
+    <div id="alertMessage" class="alert hidden">Mã không hợp lệ hoặc bạn đã hết lượt quay.</div>
+
+    <div class="mt-6">
+        <h2 class="text-xl font-bold mb-4">Lịch Sử Quay</h2>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Lượt Quay</th>
+                    <th>Kết Quả</th>
+                    <th>Mã Phần Thưởng</th>
+                </tr>
+            </thead>
+            <tbody id="historyTableBody">
+                <!-- Lịch sử quay sẽ được hiển thị ở đây -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="vqmm.js"></script> <!-- Liên kết với file script.js -->
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web</title>
+    <style>
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease, bottom 0.3s ease;
+        }
+        body {
+            height: 2000px; /* Just to make the page scrollable */
+        }
+        .footer.visible {
+            opacity: 1;
+            bottom: 0;
+        }
+        .footer a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nội dung trang web -->
+
+    <div class="footer">
+        &copy; 2025 BB Boy. All rights reserved. | 
+        <a href="/terms">Terms of Use</a> | 
+        <a href="/privacy-policy">Privacy Policy</a> | 
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('.footer');
+            if (window.scrollY > 200) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
+
+</body>
+</html>
